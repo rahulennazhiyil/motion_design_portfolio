@@ -1,0 +1,23 @@
+<section class="hero-container" #heroContainer>
+  <div class="hero-content">
+    <h1 class="hero-title">
+      @for (char of 'MOTION'.split(''); track $index) {
+        <span class="char">{{char}}</span>
+      }
+      <span class="spacer"> </span>
+      @for (char of 'DESIGN'.split(''); track $index) {
+        <span class="char">{{char}}</span>
+      }
+    </h1>
+    <p class="hero-subtitle">
+      Creating immersive digital experiences through code and motion.
+    </p>
+    <button class="cta-button">Explore Work</button>
+  </div>
+
+  <div class="hero-visuals">
+    <div class="shape circle" #shape1></div>
+    <div class="shape square" #shape2></div>
+    <div class="shape triangle" #shape3></div>
+  </div>
+</section>

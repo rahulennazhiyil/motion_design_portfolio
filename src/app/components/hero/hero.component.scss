@@ -1,0 +1,109 @@
+@use 'sass:math';
+
+.hero-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  background-color: #0a0a0a;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+
+  .hero-content {
+    z-index: 2;
+    flex: 1;
+
+    .hero-title {
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+
+      .char {
+        display: inline-block;
+        opacity: 0; // Initial state for animation
+        transform: translateY(100%);
+      }
+
+      .spacer {
+        width: 1rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #888;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      opacity: 0;
+    }
+
+    .cta-button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      opacity: 0;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .hero-visuals {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .shape {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .circle {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #ff00cc, #333399);
+      top: 20%;
+      right: 10%;
+      filter: blur(40px);
+    }
+
+    .square {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(45deg, #00ccff, #00ff99);
+      bottom: 20%;
+      right: 30%;
+      transform: rotate(45deg);
+      filter: blur(30px);
+    }
+
+    .triangle {
+       width: 0;
+       height: 0;
+       border-left: 100px solid transparent;
+       border-right: 100px solid transparent;
+       border-bottom: 200px solid #ffcc00;
+       top: 40%;
+       right: 20%;
+       filter: blur(20px);
+    }
+  }
+}
